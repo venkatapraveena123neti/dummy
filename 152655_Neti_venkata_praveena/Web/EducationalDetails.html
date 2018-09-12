@@ -1,0 +1,64 @@
+<html>
+<head>
+<title>Educational Details</title>
+<script lang="javascript" src="Validation.js"></script>
+</head>
+<body>
+	<h4 style="font-family: Calibri;" align="left">Step 2: Educational
+		Details</h4>
+	<form name="educationalDetailsFrm">
+
+		<table>
+			<tr>
+				<td>Graduation:</td>
+				<td><select name="graduation">
+						<option value="Select graduation" selected>Select graduation</option>
+						<option value="BTech">BTech</option>
+						<option value="BE">BE</option>
+						<option value="MCA">MCA</option>
+						<option value="MTech">MTech</option>
+						<option value="BCA">BCA</option>
+				</select></td>
+			</tr>
+			<tr>
+				<td>Percentage * :</td>
+				<td><input type="text" id="txtPercentage" name="percentage" /></td>
+			</tr>
+
+			<tr>
+				<td>Passing Year*:</td>
+				<td><input type="text" name="passingYear" id="txtPassYear" /></td>
+			</tr>
+
+			<tr>
+				<td>Final Project Details :</td>
+			</tr>
+			<tr>
+				<td>Project Name*:</td>
+				<td><input type="text" name="projectName" id="txtProjectName" /></td>
+			</tr>
+			<tr>
+				<td>Technologies Used</td>
+				<td><input type="checkbox" name="technologies"
+					id="cbTechnologies" value=".Net" />.Net <input type="checkbox"
+					name="technologies" id="cbTechnologies" value="Java" />Java <input
+					type="checkbox" name="technologies" id="cbTechnologies" value="PHP" />PHP
+					<input type="checkbox" name="technologies" id="cbTechnologies"
+					value="Other" />Other</td>
+			</tr>
+			<tr>
+				<td>Other Technologies</td>
+				<td><input type="text" name="otherTechnologies" id="txtOtherTechs"/></td>
+			</tr>
+
+			<tr>
+				<td><br> <input type="button" id="btnRegister"
+					value="Register Me" onclick=educationalDetailsFrmValidation()>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			</tr>
+
+		</table>
+
+	</form>
+</body>
+</html>

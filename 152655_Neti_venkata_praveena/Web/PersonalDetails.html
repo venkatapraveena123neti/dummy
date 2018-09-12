@@ -1,0 +1,74 @@
+<html>
+<head>
+<title>Personal Details</title>
+<script lang="javascript" src="Validation.js"></script>
+</head>
+<body>
+<h4 style="font-family:Calibri;" align="left">Step 1: Personal Details</h4>
+	<form name="personalDetailsFrm">
+		<table>
+			<tr>
+				<td align="left">First Name* :</td>
+				<td><input type="text"  id="txtFirstName" name="txtFN" /></td>
+			</tr>
+			<tr>
+				<td align="left">Last Name* :</td>
+				<td align="left"><input type="text" id="txtLastName"
+					name="txtLN" /></td>
+			</tr>
+			<tr>
+				<td align="left">Email* :</td>
+				<td><input type="text" id="txtEmail" name="Email"
+					pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" /></td>
+			</tr>
+
+			<tr>
+				<td align="left">Contact no.*:</td>
+				<td><input type="text" name="Phone" id="txtPhone"
+					pattern="[789][0-9]{9}" /></td>
+			</tr>
+			<tr>
+
+			</tr>
+			<tr>
+				<td align="left">Address*:</td>
+			</tr>
+			<tr>
+				<td align="left">Line 1</td>
+				<td><input type="text" name="address1" id="txtAddress1" /></td>
+			</tr>
+			<tr>
+				<td align="Left">Line 2</td>
+				<td align="left"><input type="text" name="address2"
+					id="txtAddress2" /></td>
+			</tr>
+			<tr>
+				<td align="left">City :</td>
+				<td><select name="city">
+						<option value="Select City" selected>Select City</option>
+						<option value="Pune">Pune</option>
+						<option value="Bangalore">Bangalore</option>
+						<option value="Chennai">Chennai</option>
+						<option value="Hyderabad">Hyderabad</option>
+				</select></td>
+			</tr>
+			<tr>
+				<td align="left">State :</td>
+				<td align="left"><select name="state">
+						<option value="Select State" selected>Select State</option>
+						<option value="Maharashtra">Maharashtra</option>
+						<option value="Karnataka">Karnataka</option>
+						<option value="Tamilnadu">Tamilnadu</option>
+						<option value="Telangana">Telangana</option>
+				</select></td>
+			</tr>
+
+			<tr>
+				<td><br> <a href="#" onclick=personalDetailsFrmValidation()> Next </a>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			</tr>
+		</table>
+
+	</form>
+</body>
+</html>
