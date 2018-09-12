@@ -1,0 +1,151 @@
+package com.capg.modulethree;
+
+
+import static org.junit.Assert.assertEquals;
+
+import org.junit.Test;
+import org.openqa.selenium.WebDriver;
+
+import com.capg.modulethree.pojo.EducationDetailsPojo;
+
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
+
+public class EducationDetailsStepDefinitionFile {
+
+	private WebDriver driver;
+	private EducationDetailsPojo educationDetailsPojo;
+	@Test
+	public void test() throws Throwable {
+		user_click_makepayment_link_without_entering_graduation();
+		please_Select_Graduation_should_display();
+		user_click_makepayment_link_without_entering_percentage();
+		please_fill_Percentage_detail_should_display();
+		user_click_makepayment_link_without_entering_passing_year();
+		please_fill_Passing_Year_should_display();
+		user_clicks_makepayment_link_without_entering_project_name();
+		 please_fill_Project_Name_should_display();
+		 user_click_makepayment_link_without_selecting_technologies_used();
+		 please_Select_Technologies_Used_should_display();
+		 user_clicks_makepayment_link_without_entering_other_technologies();
+		 please_fill_other_Technologies_Used_should_display();
+		 user_click_makepayment_link_after_entering_valid_details();
+		 your_Registration_Has_succesfully_done_Plz_check_you_registerd_email_for_account_activation_link_should_display_navigate_to_page();
+	}
+
+@Given("^User is on Education Details page$")
+public void user_is_on_Education_Details_page() throws Throwable {
+    // Write code here that turns the phrase above into concrete actions
+   driver.get("D:\\BDD_Selenium\\152655_Neti_venkata_praveena\\Web\\EducationalDetails.html");
+}
+
+@When("^title of the page doesnt match$")
+public void title_of_the_page_doesnt_match() throws Throwable {
+    // Write code here that turns the phrase above into concrete actions
+   
+}
+
+@Then("^test stops execution$")
+public void test_stops_execution() throws Throwable {
+    // Write code here that turns the phrase above into concrete actions
+   
+}
+
+@When("^user click makepayment link without entering graduation$")
+public void user_click_makepayment_link_without_entering_graduation() throws Throwable {
+    // Write code here that turns the phrase above into concrete actions
+	educationDetailsPojo.btnSubmit();
+	assertEquals("Please Select Graduation", driver.switchTo().alert().getText());
+}
+
+@Then("^'Please Select Graduation' should display$")
+public void please_Select_Graduation_should_display() throws Throwable {
+    // Write code here that turns the phrase above into concrete actions
+	driver.switchTo().alert().dismiss();
+	educationDetailsPojo.setGraduation("BTech");
+}
+
+@When("^user click makepayment link without entering percentage$")
+public void user_click_makepayment_link_without_entering_percentage() throws Throwable {
+    // Write code here that turns the phrase above into concrete actions
+	educationDetailsPojo.btnSubmit();
+	assertEquals("Please fill Percentage detail", driver.switchTo().alert().getText());
+}
+
+@Then("^'Please fill Percentage detail' should display$")
+public void please_fill_Percentage_detail_should_display() throws Throwable {
+    // Write code here that turns the phrase above into concrete actions
+	driver.switchTo().alert().dismiss();
+	educationDetailsPojo.setPercentage("78");
+}
+
+@When("^user click makepayment link without entering passing year$")
+public void user_click_makepayment_link_without_entering_passing_year() throws Throwable {
+    // Write code here that turns the phrase above into concrete actions
+	educationDetailsPojo.btnSubmit();
+	assertEquals("Please fill Passing Year", driver.switchTo().alert().getText());
+}
+
+@Then("^'Please fill Passing Year' should display$")
+public void please_fill_Passing_Year_should_display() throws Throwable {
+    // Write code here that turns the phrase above into concrete actions
+	driver.switchTo().alert().dismiss();
+	educationDetailsPojo.setPassYear("2018");
+}
+
+@When("^user clicks makepayment link without entering project name$")
+public void user_clicks_makepayment_link_without_entering_project_name() throws Throwable {
+    // Write code here that turns the phrase above into concrete actions
+	educationDetailsPojo.btnSubmit();
+	assertEquals("Please fill Project Name", driver.switchTo().alert().getText());
+}
+
+@Then("^'Please fill Project Name' should display$")
+public void please_fill_Project_Name_should_display() throws Throwable {
+    // Write code here that turns the phrase above into concrete actions
+	driver.switchTo().alert().dismiss();
+	educationDetailsPojo.setProjectName("Android");
+}
+
+@When("^user click makepayment link without selecting technologies used$")
+public void user_click_makepayment_link_without_selecting_technologies_used() throws Throwable {
+    // Write code here that turns the phrase above into concrete actions
+	educationDetailsPojo.btnSubmit();
+	assertEquals("Please Select Technologies Used", driver.switchTo().alert().getText());
+}
+
+@Then("^'Please Select Technologies Used' should display$")
+public void please_Select_Technologies_Used_should_display() throws Throwable {
+    // Write code here that turns the phrase above into concrete actions
+	driver.switchTo().alert().dismiss();
+	educationDetailsPojo.setTechnologies("Java");
+}
+
+@When("^user clicks makepayment link without entering other technologies$")
+public void user_clicks_makepayment_link_without_entering_other_technologies() throws Throwable {
+    // Write code here that turns the phrase above into concrete actions
+	educationDetailsPojo.btnSubmit();
+	assertEquals("Please fill other Technologies Used", driver.switchTo().alert().getText());
+}
+
+@Then("^'Please fill other Technologies Used' should display$")
+public void please_fill_other_Technologies_Used_should_display() throws Throwable {
+    // Write code here that turns the phrase above into concrete actions
+	driver.switchTo().alert().dismiss();
+	educationDetailsPojo.setOtherTech("Cloud");
+}
+
+@When("^user click makepayment link after entering valid details$")
+public void user_click_makepayment_link_after_entering_valid_details() throws Throwable {
+    // Write code here that turns the phrase above into concrete actions
+	educationDetailsPojo.btnSubmit();
+}
+
+@Then("^'Your Registration Has succesfully done Plz check you registerd email for account activation link !!!' should display navigate to page$")
+public void your_Registration_Has_succesfully_done_Plz_check_you_registerd_email_for_account_activation_link_should_display_navigate_to_page() throws Throwable {
+    // Write code here that turns the phrase above into concrete actions
+	driver.switchTo().alert().dismiss();
+}
+
+}
