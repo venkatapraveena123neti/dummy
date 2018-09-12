@@ -1,0 +1,17 @@
+class Operations
+{
+public static void main(String args[])
+{
+
+Calculator calc=new Calculator();
+
+calc.Calcinputone=Integer.parseInt(args[0]);
+calc.Calcinputtwo=Integer.parseInt(args[1]);
+
+calc.addition();
+calc.subtraction();
+calc.multiplication();
+calc.division();
+
+
+
