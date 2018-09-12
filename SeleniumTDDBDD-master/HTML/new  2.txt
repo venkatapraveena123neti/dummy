@@ -1,0 +1,39 @@
+
+@tag
+Feature: Q WebPage Login Form
+  User registering conference room
+
+  @execute
+  Scenario: User trying to redirect by giving invalid details
+    Given User is on Q WebPage
+    When User clicks next without entering first name
+    Then "please fill first name" message should display
+    When User clicks next without entering last name
+    Then "please fill last name" message should display
+    When User clicks next without entering email
+    Then "please fill email" message should display
+    When User enters invalid email address
+    Then "please enter valid email address" message should display
+    When User clicks next without entering contact number
+    Then "please fill contact number" message should display'
+    When User enters invalid contact number
+    Then "please enter valid contact number" message should display
+    When User clicks next without selecting no of peopleS
+    Then "please select no of people" message should display
+    When User clicks next without entering Building name and room number
+    Then "please fill building name and room " message should display
+    When User clicks next without entering Area name
+    Then "please fill area name " message should display
+    When User clicks next without selecting city
+    Then "please select city" message should display
+
+  @executee
+  Scenario Outline: User enters valid details
+    Given User is on Q WebPage
+    When User enters all valid details
+    Then "Conference room booked succesfully" message should display
+
+    Examples: 
+      | name  | value | status  |
+      | name1 |     5 | success |
+      | name2 |     7 | Fail    |

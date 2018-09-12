@@ -1,0 +1,125 @@
+package com.cg.Question;
+
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.PageFactory;
+
+import com.cg.Question.pojo.QuestionPojoBean;
+import com.cg.Question.util.DriverUtil;
+
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
+import junit.framework.Assert;
+
+public class QuestionStepDefinitionFile {
+
+	@Test
+	public void test() {
+		
+	}
+	private WebDriver drivers;
+	private QuestionPojoBean questionPojoBean;
+	@Before
+	public void driverInit()
+	{
+		drivers = DriverUtil.driverInitializer("chrome");
+		questionPojoBean = new QuestionPojoBean();
+		PageFactory.initElements(drivers, questionPojoBean);
+	}
+	@Given("^User is on Q WebPage$")
+	public void user_is_on_Q_WebPage() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	    drivers.get("D:\\BDD_Selenium\\Question\\Web\\Q.html");
+	}
+
+	@When("^User clicks next without entering first name$")
+	public void user_clicks_next_without_entering_first_name() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	 String actual=drivers.switchTo().alert().getText();
+	 String expected="please fill first name";
+	assertEquals(expected, actual);
+	 
+	}
+
+	
+
+	@When("^User clicks next without entering last name$")
+	public void user_clicks_next_without_entering_last_name() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+		String actual=drivers.switchTo().alert().getText();
+		 String expected="please fill last name";
+		assertEquals(expected, actual);
+	}
+
+	@When("^User clicks next without entering email$")
+	public void user_clicks_next_without_entering_email() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	    
+	}
+
+	@When("^User enters invalid email address$")
+	public void user_enters_invalid_email_address() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	    
+	}
+
+	@When("^User clicks next without entering contact number$")
+	public void user_clicks_next_without_entering_contact_number() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	   
+	}
+
+	@Then("^\"([^\"]*)\" message should display'$")
+	public void message_should_display(String arg1) throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	   
+	}
+
+	@When("^User enters invalid contact number$")
+	public void user_enters_invalid_contact_number() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	    
+	}
+
+	@When("^User clicks next without selecting no of peopleS$")
+	public void user_clicks_next_without_selecting_no_of_peopleS() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	    
+	}
+
+	@When("^User clicks next without entering Building name and room number$")
+	public void user_clicks_next_without_entering_Building_name_and_room_number() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	    
+	}
+
+	@When("^User clicks next without entering Area name$")
+	public void user_clicks_next_without_entering_Area_name() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	    
+	}
+
+	@When("^User clicks next without selecting city$")
+	public void user_clicks_next_without_selecting_city() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	   
+	}
+
+	@When("^User enters all valid details$")
+	public void user_enters_all_valid_details() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+		questionPojoBean.nextClick();
+	}
+	@After
+	public void closed()
+	{
+		DriverUtil.driverClose(drivers);
+	}
+
+
+}
